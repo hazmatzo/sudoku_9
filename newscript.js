@@ -1,0 +1,1 @@
+document.getElementById("demo").innerHTML="We eats code.";
