@@ -1,10 +1,10 @@
-src_files:
- - 'app/generator.js'
+# src_files:
+#  - 'app/javascripts/' // TODO fill in needed files
 
-stylesheets:
-helpers:
+# stylesheets:
+# helpers:
 
-spec_files:
-  - '**/*[sS]pec.js'
+# spec_files:
+#   - '**/*[sS]pec.js'
 
-spec_dir: spec
+# spec_dir: spec
