@@ -1,0 +1,10 @@
+src_files:
+ - 'app/generator.js'
+
+stylesheets:
+helpers:
+
+spec_files:
+  - '**/*[sS]pec.js'
+
+spec_dir: spec
