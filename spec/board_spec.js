@@ -6,21 +6,24 @@
 //    And I should see a button 'Generate'
 
 describe("Board, functional", function(){
-  var newBoard;
-  var boardEl;
+  var board;
 
   beforeEach(function(){
-    newBoard = new Board();
-    boardEl = newBoard.$('.board').text();
+    board = new Board();
   });
 
   describe("when going to a new game page", function(){
-    it("should display an empty board", function(){
-      newBoard.render();
-      // expect(newBoard).toContain(); //81 cells!
-      expect(boardEl).toContain('there are no numbers');
+    beforeEach(function(){
+      board.render()
     });
 
-    xit("should display a button 'Generate'")
+    it("should display an empty board", function(){
+      expect(board.$('.cell').length).toBe(81); //81 cells!
+      expect(board.$el.text()).not.toMatch(/\d+/);
+    });
+
+    it("should display a button 'Generate'", function(){
+      expect(board.$('input[type=submit]').value()).toContain('Generate') //select input type css lookup
+    });
   });
 });
