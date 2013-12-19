@@ -7,16 +7,18 @@
 
 describe("Board, functional", function(){
   var newBoard;
+  var boardEl;
 
   beforeEach(function(){
     newBoard = new Board();
+    boardEl = newBoard.$('.board').text();
   });
 
   describe("when going to a new game page", function(){
     it("should display an empty board", function(){
       newBoard.render();
-      // expect(newBoard).toContain(Cells); //what does HTML for a cell look like?
-      expect(newBoard).not.toMatch(/\d+/);
+      // expect(newBoard).toContain(); //81 cells!
+      expect(boardEl).toContain('there are no numbers');
     });
 
     xit("should display a button 'Generate'")
