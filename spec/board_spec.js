@@ -14,7 +14,7 @@ describe("Board, functional", function(){
 
   describe("when going to a new game page", function(){
     beforeEach(function(){
-      board.render()
+      board.render();
     });
 
     it("should display an empty board", function(){
@@ -23,7 +23,7 @@ describe("Board, functional", function(){
     });
 
     it("should display a button 'Generate'", function(){
-      expect(board.$('input[type=submit]').value()).toContain('Generate') //select input type css lookup
+      expect(board.$('input[type=submit]').value()).toContain('Generate');
     });
   });
 });
