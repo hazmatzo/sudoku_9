@@ -5,11 +5,11 @@
 //    Then I should see an empty board
 //    And I should see a button 'Generate'
 
-describe("Board, functional", function(){
+describe("Sudoku.View.Board, functional", function(){
   var board;
 
   beforeEach(function(){
-    board = new Board();
+    board = new Sudoku.View.Board();
   });
 
   describe("when going to a new game page", function(){

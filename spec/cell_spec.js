@@ -1,11 +1,11 @@
-describe("Cell, unit", function(){
+describe("Sudoku.View.Cell, unit", function(){
   var cell;
   var model;
 
   describe("render", function(){
     it("renders an HTML tag for cell class attribute", function(){
       model = new Backbone.Model({value: null});
-      cell = new Cell({model:model});
+      cell = new Sudoku.View.Cell({model:model});
       cell.render();
       expect(cell.$el.html()).toContain('<div class="cell">');
     });
@@ -13,7 +13,7 @@ describe("Cell, unit", function(){
     describe("value is null", function(){
       beforeEach(function(){
         model = new Backbone.Model({value: null});
-        cell = new Cell({model:model});
+        cell = new Sudoku.View.Cell({model:model});
         cell.render();
       });
 
@@ -25,7 +25,7 @@ describe("Cell, unit", function(){
     describe("value is not null", function(){
       beforeEach(function(){
         model = new Backbone.Model({value: 6});
-        cell = new Cell({model:model});
+        cell = new Sudoku.View.Cell({model:model});
         cell.render();
       });
 
