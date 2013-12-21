@@ -3,7 +3,7 @@ describe("Sudoku.View.Cell, unit", function(){
   var model;
 
   describe("render", function(){
-    it("renders an HTML tag for cell class attribute", function(){
+    it("renders an HTML div tag for .cell", function(){
       model = new Backbone.Model({value: null});
       cell = new Sudoku.View.Cell({model:model});
       cell.render();
