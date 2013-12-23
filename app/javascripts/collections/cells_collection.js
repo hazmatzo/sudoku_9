@@ -1,7 +1,7 @@
-
-
 Sudoku.Collection.Cells = Backbone.Collection({model: cellModel});
-//TODO are we properly building this collection?
-//TODO do we need a cellsListView??
 
-var cellsCollection = new Sudoku.Collection.Cells
+var cellsCollection = new Sudoku.Collection.Cells({value: 7});
+/* To do: Need to add values, cells, etc. As was learned yesterday, just
+by putting a hash with attributes, because the model is already specified,
+the collection instance automatically puts those attributes on an object
+of the base model specified. */
