@@ -1,5 +1,3 @@
-Sudoku.Model.Cell = Backbone.Model.extend({
-  value: 7,
-})
+Sudoku.Model.Cell = Backbone.Model.extend({});
 
-cellModel = new Sudoku.Model.Cell
+cellModel = new Sudoku.Model.Cell();
