@@ -1,12 +1,13 @@
 Sudoku.View.Cells = Backbone.View.extend({});
 
 Sudoku.cellsView = new Sudoku.View.Cells({
-  collection: Sudoku.Collection.Cells
+  collection: cellsCollection
 });
 
 Sudoku.View.Board = Backbone.View.extend({
   render: function(){
-    this.$el.append("Sudoku.cellsView.render().el");
+    Sudoku.cellsView.render();
+    this.$el.append("Sudoku.cellsView.el");
   },
 });
 /* What to append: I believe we append the view of the collection. */
@@ -23,6 +24,18 @@ $(document).ready(function(){
 forEach code, like so:
   render: function(){
     this.collection.forEach(addOne);
-  };
-*/
+  }; */
+/* To investigate: do we automatically have all the views per models that
+we need, or do we need to create them with a forEach loop, like in
+this.collection.forEach(function(todoItem)){
+  var todoView = new TodoView({model: todoItem});
+  this.$el.append(todoView.render().el);
+  )};
+} */
 /* To do: Where does the addOne code belong? */
+/* To do: Mustache error shows up in console:
+Refused to execute script from
+'http://github.com/janl/mustache.js/raw/master/mustache.js'
+because its MIME type ('text/plain') is not executable, and
+strict MIME type checking is enabled. */
+/* Add 81 instances of models in the collection. */
