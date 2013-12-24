@@ -5,7 +5,7 @@ describe("Sudoku.View.Cell, unit", function(){
   describe("render", function(){
     it("renders an HTML div tag for .cell", function(){
       model = new Backbone.Model({value: null});
-      cell = new Sudoku.View.Cell({model:model});
+      cell = new Sudoku.View.Cell({model: model});
       cell.render();
       expect(cell.$el.html()).toContain('<div class="cell">');
     });

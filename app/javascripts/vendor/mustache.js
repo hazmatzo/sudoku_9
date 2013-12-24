@@ -1,6 +1,6 @@
-HTTP/1.1 302 Found
-Server: GitHub.com
-Date: Tue, 24 Dec 2013 00:01:42 GMT
+HTTP/1.1 302 Found;
+Server: GitHub.com;
+Date: Tue, 24 Dec 2013 00:01:42 GMT;
 Content-Type: text/html; charset=utf-8
 Status: 302 Found
 Cache-Control: no-cache

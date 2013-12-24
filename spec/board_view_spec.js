@@ -6,10 +6,11 @@
 //    And I should see a button 'Generate'
 
 describe("Sudoku.View.Board, functional", function(){
-  var board;
+  var board, collection;
 
   beforeEach(function(){
-    board = new Sudoku.View.Board();
+    collection = new Backbone.Collection(); // 81 empty hashes
+    board = new Sudoku.View.Board({collection: collection});
   });
 
   describe("when going to a new game page", function(){
@@ -18,7 +19,7 @@ describe("Sudoku.View.Board, functional", function(){
     });
 
     it("should display an empty board", function(){
-      expect(board.$('.cell').length).toBe(81); //81 cells!
+      expect(board.$('.cell').length).toBe(81); // 81 cells!
       expect(board.$el.text()).not.toMatch(/\d+/);
     });
 

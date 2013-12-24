@@ -1,8 +1,10 @@
-Sudoku.View.Cells = Backbone.View.extend({});
+// Sudoku.View.Cells = Backbone.View.extend({
 
-Sudoku.cellsView = new Sudoku.View.Cells({
-  collection: cellsCollection
-});
+// });
+
+// Sudoku.cellsView = new Sudoku.View.Cells({
+//   collection: Sudoku.cellsCollection
+// });
 
 Sudoku.View.Board = Backbone.View.extend({
   render: function(){
@@ -15,7 +17,8 @@ Sudoku.View.Board = Backbone.View.extend({
 cellsView just be the same as boardView? */
 
 $(document).ready(function(){
-  new Sudoku.View.Board({el: $('.board')}).render();
+  var collection_to_be_made = new Backbone.Collection(); // 81 empty hashes
+  new Sudoku.View.Board({el: $('.board'), collection: collection_to_be_made}).render();
 });
 /* This works and without it the above statement doesn't display. */
 

@@ -1,6 +1,4 @@
-Sudoku.Collection.Cells = Backbone.Collection({model: cellModel});
-
-var cellsCollection = new Sudoku.Collection.Cells(
+Sudoku.cellsCollection = new Backbone.Collection(
   {value: 7},
   {value: 8},
   {value: 9}
