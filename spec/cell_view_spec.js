@@ -1,6 +1,7 @@
 describe("Sudoku.View.Cell, unit", function(){
   var cell;
   var model;
+  var template = '<div class="cell">' + '</div>';
 
   describe("render", function(){
     it("renders an HTML div tag for .cell", function(){

@@ -1,44 +1,37 @@
-// Sudoku.View.Cells = Backbone.View.extend({
-
-// });
-
-// Sudoku.cellsView = new Sudoku.View.Cells({
-//   collection: Sudoku.cellsCollection
-// });
-
 Sudoku.View.Board = Backbone.View.extend({
   render: function(){
-    Sudoku.cellsView.render();
-    this.$el.append("Sudoku.cellsView.el");
-  },
+    _.each(this.collection, function(){
+      var cell = new Sudoku.View.Cell();
+      $('.board').append(cell.render().el);
+      /* this.$el.append(cell.render().el); */
+    });
+  }
 });
-/* What to append: I believe we append the view of the collection. */
-/* Do we need to have BoardView render an instances of cellsView or should
-cellsView just be the same as boardView? */
 
 $(document).ready(function(){
-  var collection_to_be_made = new Backbone.Collection(); // 81 empty hashes
-  new Sudoku.View.Board({el: $('.board'), collection: collection_to_be_made}).render();
-});
-/* This works and without it the above statement doesn't display. */
+  var valueHashes = _.map(_.range(81), function(num){
+    return {value: null};
+  });
+  var collection = new Backbone.Collection(valueHashes);
 
-/* To do: need to add something that responds to "value". */
-/* To do: Would like to add the addOne function somewhere with accompanying
-forEach code, like so:
-  render: function(){
-    this.collection.forEach(addOne);
-  }; */
-/* To investigate: do we automatically have all the views per models that
-we need, or do we need to create them with a forEach loop, like in
+  new Sudoku.View.Board({
+    collection: collection,
+    el: $('.board')
+  }).render();
+});
+
+/* To do: create a view for each item in the collection
 this.collection.forEach(function(todoItem)){
   var todoView = new TodoView({model: todoItem});
   this.$el.append(todoView.render().el);
   )};
 } */
+
 /* To do: Where does the addOne code belong? */
-/* To do: Mustache error shows up in console:
-Refused to execute script from
-'http://github.com/janl/mustache.js/raw/master/mustache.js'
-because its MIME type ('text/plain') is not executable, and
-strict MIME type checking is enabled. */
-/* Add 81 instances of models in the collection. */
+/* To do: Add 81 instances of models in the collection. */
+/* Kane's To do:
+  * Don't create a new empty anything -- no models without logic.
+  * Don't specify the model when defining the collection. CIWK: don't create a model at all?
+  * Views should get passed into the model - CIWK: models and collections should not reference or know about views?
+  * End result: An array with 81 empty hashes
+  */
