@@ -1,20 +1,19 @@
 describe("Sudoku.View.Cell, unit", function(){
   var cell;
   var model;
-  var template = '<div class="cell">' + '</div>';
 
   describe("render", function(){
     it("renders an HTML div tag for .cell", function(){
       model = new Backbone.Model({value: null});
       cell = new Sudoku.View.Cell({model: model});
       cell.render();
-      expect(cell.$el.html()).toContain('<div class="cell">');
+      expect(cell.$el.hasClass("cell")).toBeTruthy();
     });
 
     describe("value is null", function(){
       beforeEach(function(){
         model = new Backbone.Model({value: null});
-        cell = new Sudoku.View.Cell({model:model});
+        cell = new Sudoku.View.Cell({model: model});
         cell.render();
       });
 
@@ -27,7 +26,7 @@ describe("Sudoku.View.Cell, unit", function(){
       beforeEach(function(){
         model = new Backbone.Model({value: 6});
         cell = new Sudoku.View.Cell({model:model});
-        cell.render();
+        cell.render(); //CWIK re these tests
       });
 
       it("displays a number in the cell", function(){

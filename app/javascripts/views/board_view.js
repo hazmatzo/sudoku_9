@@ -1,23 +1,26 @@
 Sudoku.View.Board = Backbone.View.extend({
   render: function(){
-    _.each(this.collection, function(){
-      var cell = new Sudoku.View.Cell();
+    this.collection.each( function(item){
+      var cell = new Sudoku.View.Cell({model: item}); //how do we get the model in here?!
       $('.board').append(cell.render().el);
-      /* this.$el.append(cell.render().el); */
     });
   }
 });
 
 $(document).ready(function(){
-  var valueHashes = _.map(_.range(81), function(num){
-    return {value: null};
-  });
-  var collection = new Backbone.Collection(valueHashes);
 
-  new Sudoku.View.Board({
+  var modelHashes = _.map(_.range(81), function(num){
+    return {value: null};
+  }); // CIWK is this where we insert the models?
+
+  var collection = new Backbone.Collection(modelHashes);
+
+  window.board = new Sudoku.View.Board({
     collection: collection,
     el: $('.board')
-  }).render();
+  });
+
+  window.board.render();
 });
 
 /* To do: create a view for each item in the collection
@@ -35,3 +38,4 @@ this.collection.forEach(function(todoItem)){
   * Views should get passed into the model - CIWK: models and collections should not reference or know about views?
   * End result: An array with 81 empty hashes
   */
+// collection.pluck('')

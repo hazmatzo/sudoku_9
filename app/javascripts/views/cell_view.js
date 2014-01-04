@@ -1,15 +1,12 @@
 Sudoku.View.Cell = Backbone.View.extend({
   template: function(){
-    return $('#template').html();
+    return $('#template').text();
   },
 
-  initialize: function(){
-    this.setElement( this.template() );
-    this.render();
-  },
+  className: 'cell',
 
   render: function(){
-    this.$el.html(this.template().innerHTML);
+    this.$el.html(Mustache.render(this.template(), this.model.toJSON()));
     return this;
   }
 });
