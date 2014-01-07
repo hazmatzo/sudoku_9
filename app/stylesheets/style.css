@@ -1,0 +1,25 @@
+/*layout*/
+.content {
+  width: 950px;
+  height: 950px;
+  font-family: 'Press Start 2P', cursive;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/*grid*/
+.row {width:100%;}
+.unit {float: left;}
+
+.size1of9 {
+  width:11.11%;
+}
+
+/*oo styles*/
+.bordered {
+  border: 1px solid black;
+}
+
+.centered-content {
+  text-align: center;
+}
