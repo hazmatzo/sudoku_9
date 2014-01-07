@@ -1,6 +1,5 @@
 describe("Sudoku.View.Cell, unit", function(){
-  var cell;
-  var model;
+  var cell, model;
 
   describe("render", function(){
     it("renders an HTML div tag for .cell", function(){
@@ -26,7 +25,7 @@ describe("Sudoku.View.Cell, unit", function(){
       beforeEach(function(){
         model = new Backbone.Model({value: 6});
         cell = new Sudoku.View.Cell({model:model});
-        cell.render(); //CWIK re these tests
+        cell.render();
       });
 
       it("displays a number in the cell", function(){

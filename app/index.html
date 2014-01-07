@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>Sudoku 9</title>
 
   <!-- vendor -->
   <script type="text/javascript" src="javascripts/vendor/jquery-1.10.2.js"></script>
@@ -10,9 +11,12 @@
 
   <!-- source -->
   <script type="text/javascript" src="javascripts/sudoku.js" ></script>
+  <script type="text/javascript" src="javascripts/initialize.js" ></script>
+  <script type="text/javascript" src="javascripts/game_data.js" ></script>
   <script type="text/javascript" src="javascripts/views/cell_view.js"></script>
   <script type="text/javascript" src="javascripts/views/board_view.js" ></script>
-  <script type="text/html" id="template">{{value}}</script>
+  <script type="text/mustache" id="template">{{value}}</script>
+  <script type="text/mustache" id="generateButton"><input type="submit" value="Generate"></script>
 </head>
 
 <body>

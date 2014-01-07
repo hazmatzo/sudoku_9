@@ -6,25 +6,30 @@
 //    And I should see a button 'Generate'
 
 describe("Sudoku.View.Board, functional", function(){
-  var board, collection;
+  var board, collection, gameData;
+
 
   beforeEach(function(){
-    collection = new Backbone.Collection(); // 81 empty hashes
+    collection = new Backbone.Collection(fakeModelHashes); // 81 empty hashes
     board = new Sudoku.View.Board({collection: collection});
+    gameData = function(){
+      return {collection: collection, el: $('.board')};
+    };
   });
 
   describe("when going to a new game page", function(){
     beforeEach(function(){
       board.render();
+      console.log(board.$el);
     });
 
     it("should display an empty board", function(){
-      expect(board.$('.cell').length).toBe(81); // 81 cells!
+      expect(board.$('.cell').length).toEqual(81); // 81 cells!
       expect(board.$el.text()).not.toMatch(/\d+/);
     });
 
     it("should display a button 'Generate'", function(){
-      expect(board.$('input[type=submit]').value()).toContain('Generate');
+      expect(board.$(':submit').val()).toEqual('Generate');
     });
   });
 });

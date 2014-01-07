@@ -1,33 +1,17 @@
 Sudoku.View.Board = Backbone.View.extend({
   render: function(){
-    this.collection.each( function(item){
-      var cell = new Sudoku.View.Cell({model: item}); //how do we get the model in here?!
-      $('.board').append(cell.render().el);
-    });
+    this.collection.each(this.renderCell, this);
+    this.$el.append($('#generateButton').text());
+  },
+
+  renderCell: function(item){
+    var cell = new Sudoku.View.Cell({model: item});
+    this.$el.append(cell.render().el);
   }
-});
-
-$(document).ready(function(){
-
-  var modelHashes = _.map(_.range(81), function(num){
-    return {value: null};
-  }); // CIWK is this where we insert the models?
-
-  var collection = new Backbone.Collection(modelHashes);
-
-  window.board = new Sudoku.View.Board({
-    collection: collection,
-    el: $('.board')
-  });
-
-  window.board.render();
 });
 
 /* To do: create a view for each item in the collection
 this.collection.forEach(function(todoItem)){
-  var todoView = new TodoView({model: todoItem});
-  this.$el.append(todoView.render().el);
-  )};
 } */
 
 /* To do: Where does the addOne code belong? */
