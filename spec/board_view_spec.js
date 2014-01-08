@@ -7,7 +7,8 @@
 
 describe("Sudoku.View.Board, functional", function(){
   var board, collection, gameData;
-
+  //CIWK should these tests now be in a functional test suite for initialize?
+  // seems weird that they're here
 
   beforeEach(function(){
     collection = new Backbone.Collection(fakeModelHashes); // 81 empty hashes
@@ -20,7 +21,6 @@ describe("Sudoku.View.Board, functional", function(){
   describe("when going to a new game page", function(){
     beforeEach(function(){
       board.render();
-      console.log(board.$el);
     });
 
     it("should display an empty board", function(){

@@ -1,6 +1,7 @@
-describe("gameData, unit", function(){
+describe("Game, unit", function(){
 
-  it("creates a collection of 81 null values", function(){
-    expect(gameData().collection.length).toBe(81);
+  it("starts a game with a board of 81 cells", function(){
+    Game.start();
+    expect(window.board.collection.length).toBe(81);
   });
 });

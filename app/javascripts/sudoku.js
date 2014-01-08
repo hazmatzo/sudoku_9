@@ -1,5 +1,6 @@
 var Sudoku = {
   View: {},
   Model: {},
-  Collection: {}
+  Collection: {},
+  gameData:{}
 };
