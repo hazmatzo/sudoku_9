@@ -1,20 +1,14 @@
 Sudoku.View.Board = Backbone.View.extend({
   render: function(){
-    this.collection.each(this.renderCell, this);
-    //this.collection.rows();
+    var rowsArray = this.collection.rows();
+    //rowsArray is an array of row collections
+    _.each(rowsArray, function(cellRow){
+      //cellRow is an instance of a collection
+
+      var row = new Sudoku.View.Row({collection: cellRow});
+      this.$el.append(row.render().el);
+    }, this);
+
     this.$el.append($('#generateButton').text());
   },
-
-  renderCell: function(item){
-    var cell = new Sudoku.View.Cell({model: item});
-    this.$el.append(cell.render().el);
-  }
 });
-
-// this.collection.rows() // are we calling .rows() on the collection of cells?
-//  array of 9 collections
-
-// this.collection.row(3) -- helper method
-//  would return a collection (of cells)
-//  this.collection.each(this.renderCell, this);
-//  helper method: 'where we're using where' filter

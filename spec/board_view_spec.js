@@ -7,11 +7,10 @@
 
 describe("Sudoku.View.Board, functional", function(){
   var board, collection, gameData;
-  //CIWK should these tests now be in a functional test suite for initialize?
-  // seems weird that they're here
+  //TODO move functional testing up to Game
 
   beforeEach(function(){
-    collection = new Backbone.Collection(fakeModelHashes); // 81 empty hashes
+    collection = new Backbone.Collection(fakeCellHashes); // 81 empty hashes
     board = new Sudoku.View.Board({collection: collection});
     gameData = function(){
       return {collection: collection, el: $('.board')};
@@ -24,6 +23,7 @@ describe("Sudoku.View.Board, functional", function(){
     });
 
     it("should display an empty board", function(){
+      expect(board.$('.row').length).toEqual(9);
       expect(board.$('.cell').length).toEqual(81); // 81 cells!
       expect(board.$el.text()).not.toMatch(/\d+/);
     });
