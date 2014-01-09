@@ -8,6 +8,7 @@ Sudoku.View.Row = Backbone.View.extend({
 
   renderCell: function(item){
     var cell = new Sudoku.View.Cell({model: item});
-    this.$el.append(cell.render().el);
+    cell.render();
+    this.$el.append(cell.el);
   }
 });

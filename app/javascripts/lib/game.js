@@ -1,8 +1,8 @@
 var Game = {
   start: function(gameData){
     gameData = gameData || this.data(); // JS ||=
-    window.board = new Sudoku.View.Board(gameData);
-    window.board.render();
+    var board = new Sudoku.View.Board(gameData);
+    board.render();
   },
 
   data: function(){
@@ -17,6 +17,8 @@ var Game = {
   }
 };
 
-
+// closures are the only way to get privacy
+// more dynamic in dangerous ways
+// don't try and make functions private
 
 
