@@ -12,5 +12,5 @@ Managing cells for programmatic application of HTML classes for CSS:
   * call rows method on collection
 
 Plan to git message every hour to be more prepped for UFOs
-  * TODO check in with Sowju or Fito re the git -m staching
+  * TODO check in with Sowju (;_;) or Fito re the git -m staching
 

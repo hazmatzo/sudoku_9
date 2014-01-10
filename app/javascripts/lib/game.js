@@ -2,7 +2,8 @@ var Game = {
   start: function(gameData){
     gameData = gameData || this.data(); // JS ||=
     var board = new Sudoku.View.Board(gameData);
-    board.render();
+    board.render(); //CIWK before when we had window.board, we could grab
+    // this by calling board in the console...
   },
 
   data: function(){

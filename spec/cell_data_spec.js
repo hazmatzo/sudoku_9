@@ -3,7 +3,6 @@ describe("CellData, unit", function(){
 
   it("returns an object that holds attributes", function(){
     cellData = new CellData(1);
-    expect(cellData.attributes() instanceof Object).toBe(true);
     expect(cellData.attributes().id).toBe(1);
   });
 
