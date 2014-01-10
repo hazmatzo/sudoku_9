@@ -22,7 +22,6 @@ describe("Sudoku.Collection.Cells, unit", function(){
       var nonEightNums = _.find(rowEightRowNums, function(num) {
         return num != 8;
       });
-      console.log(nonEightNums);
       expect(nonEightNums).toBeUndefined();
     });
   });
