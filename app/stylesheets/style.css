@@ -10,18 +10,40 @@
 }
 
 /*grid*/
-.row {width:100%;}
-.unit {float: left;}
+.line, .row {width:100%;}
+.unit {display: inline-block;}
+/* CIWK: units without floating? Is that OK?; */
 
+.size1of1 {width:100%;}
 .size1of9 {
-  width:11.11%;
+  width:10%;
+  height: 10%;
+  padding-top: 3.5%;
+  padding-bottom: 3.5%;
+}
+
+.cell:nth-child(3n){
+  border-right: 2px solid red;
+}
+
+.row:nth-child(3n){
+  border-bottom: 2px solid red;
+}
+
+.cell:nth-child(3n){
+  border-right: 2px solid red;
+}
+
+.row:nth-child(3n){
+  border-bottom: 2px solid red;
 }
 
 /*oo styles*/
 .bordered {
-  border: 1px solid black;
+  border: 1px solid grey;
 }
 
 .centered-content {
   text-align: center;
 }
+
