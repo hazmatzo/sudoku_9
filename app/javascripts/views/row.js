@@ -3,17 +3,17 @@ Sudoku.View.Row = Backbone.View.extend({
     return $('#row-template').text();
   },
 
+  className: 'row',
+
   render: function(){
-    var cells = this.collection.each(this.renderCell, this);
-    this.$el.html(Mustache.render(this.template(), cells));
+    this.$el.html(Mustache.render(this.template()));
+    this.collection.each(this.renderCell, this);
     return this;
   },
-
-  className: 'row',
 
   renderCell: function(item){
     var cell = new Sudoku.View.Cell({model: item});
     cell.render();
-    this.$el.append(cell.el);
+    this.$('.last-unit').append(cell.el);
   }
 });

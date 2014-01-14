@@ -23,8 +23,19 @@
   <script type="text/javascript" src="../../app/javascripts/views/cell.js"></script>
   <script type="text/javascript" src="../../app/javascripts/views/row.js"></script>
   <script type="text/javascript" src="../../app/javascripts/views/board.js"></script>
-  <script type="text/mustache" id="cell-template">{{value}}</script>
-  <script type="text/mustache" id="generateButton"><input type="submit" value="Generate"></script>
+
+  <!-- templates -->
+  <script type="text/mustache" id="row-template">
+    <div class="last-unit"></div>
+  </script>
+
+  <script type="text/mustache" id="cell-template">
+    <div class="inner bordered"><div class="value">{{value}}</div></div>
+  </script>
+
+  <script type="text/mustache" id="generateButton"><div id="generateButton" class="line unit size1of1">
+    <input type="submit" value="Generate"></div>
+  </script>
 
   <!-- include spec files here... -->
   <script type="text/javascript" src="../fake_collection_data.js"></script>
