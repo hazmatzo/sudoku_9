@@ -1,6 +1,11 @@
 Sudoku.View.Row = Backbone.View.extend({
+  template: function(){
+    return $('#row-template').text();
+  },
+
   render: function(){
-    this.collection.each(this.renderCell, this);
+    var cells = this.collection.each(this.renderCell, this);
+    this.$el.html(Mustache.render(this.template(), cells));
     return this;
   },
 

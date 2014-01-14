@@ -12,15 +12,22 @@
   <script type="text/javascript" src="javascripts/sudoku.js"></script>
   <script type="text/javascript" src="javascripts/lib/cell_data.js"></script>
   <script type="text/javascript" src="javascripts/collections/cells_collection.js"></script>
-  <script type="text/javascript" src="javascripts/views/cell_view.js"></script>
-  <script type="text/javascript" src="javascripts/views/row_view.js"></script>
-  <script type="text/javascript" src="javascripts/views/board_view.js"></script>
+  <script type="text/javascript" src="javascripts/views/cell.js"></script>
+  <script type="text/javascript" src="javascripts/views/row.js"></script>
+  <script type="text/javascript" src="javascripts/views/board.js"></script>
   <script type="text/javascript" src="javascripts/lib/game.js"></script>
   <script type="text/javascript" src="javascripts/initialize.js"></script>
 
   <!-- templates -->
-  <script type="text/mustache" id="template">{{value}}</script>
-  <script type="text/mustache" id="generateButton"><div class="line unit size1of1"><input type="submit" value="Generate"></div></script>
+  <script type="text/mustache" id="row-template">
+    <div class="inner">
+      {{#cells}}
+        {{.}}
+      {{/cells}}
+    </div>
+  </script>
+  <script type="text/mustache" id="cell-template">{{value}}</script>
+  <script type="text/mustache" id="generateButton"><div id="generateButton" class="line unit size1of1"><input type="submit" value="Generate"></div></script>
 
   <!-- styles -->
   <link href='http://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>

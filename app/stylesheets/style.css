@@ -1,49 +1,57 @@
 /*TODO keep on decorating*/
-
+body {
+  font-size: 1em;
+}
 /*layout*/
 .content {
   width: 950px;
   height: 950px;
   font-family: 'Press Start 2P', cursive;
-  margin-left:auto;
-  margin-right:auto;
+}
+
+.board{
+  width: 70%;
+  height: 70%;
+  margin: 0 auto;
 }
 
 /*grid*/
-.line, .row {width:100%;}
+.line, .row {
+  width:100%;
+}
 .unit {display: inline-block;}
 /* CIWK: units without floating? Is that OK?; */
 
 .size1of1 {width:100%;}
 .size1of9 {
-  width:10%;
-  height: 10%;
-  padding-top: 3.5%;
-  padding-bottom: 3.5%;
+  width: 11.11%;
+  height: 11.11%;
+
+}
+
+.cell:first-of-type{
+  border-left: .1em solid #00BFFF;
+}
+
+.row:first-of-type{
+  border-top: .1em solid #00BFFF;
 }
 
 .cell:nth-child(3n){
-  border-right: 2px solid red;
+  border-right: .1em solid #00BFFF;
 }
 
 .row:nth-child(3n){
-  border-bottom: 2px solid red;
-}
-
-.cell:nth-child(3n){
-  border-right: 2px solid red;
-}
-
-.row:nth-child(3n){
-  border-bottom: 2px solid red;
+  border-bottom: .1em solid #00BFFF;
 }
 
 /*oo styles*/
 .bordered {
-  border: 1px solid grey;
+  border: .1em dashed grey;
 }
 
 .centered-content {
   text-align: center;
 }
 
+/*do a media query to scale the board for smaller window*/

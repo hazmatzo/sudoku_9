@@ -1,9 +1,8 @@
 var Game = {
   start: function(gameData){
-    gameData = gameData || this.data(); // JS ||=
+    gameData = gameData || this.data();
     var board = new Sudoku.View.Board(gameData);
-    board.render(); //CIWK before when we had window.board, we could grab
-    // this by calling board in the console...
+    board.render();
   },
 
   data: function(){
@@ -17,9 +16,4 @@ var Game = {
     return {collection: collection, el: $('.board')};
   }
 };
-
-// closures are the only way to get privacy
-// more dynamic in dangerous ways
-// don't try and make functions private
-
 
