@@ -29,6 +29,7 @@ describe("Sudoku.View.Cell, unit", function(){
       });
 
       it("displays a number in the cell", function(){
+        console.log(cell.$el);
         expect(cell.$el.text()).toContain('6');
       });
     });

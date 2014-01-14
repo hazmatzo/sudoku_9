@@ -1,6 +1,6 @@
 Sudoku.View.Cell = Backbone.View.extend({
   template: function(){
-    return $('#template').text();
+    return $('#cell-template').text();
   },
 
   className: 'cell unit size1of9 bordered',
