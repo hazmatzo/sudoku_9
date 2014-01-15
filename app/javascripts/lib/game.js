@@ -14,6 +14,10 @@ var Game = {
     var collection = new Sudoku.Collection.Cells(modelHashes);
 
     return {collection: collection, el: $('.board')};
+  },
+
+  generate: function(){
+    alert("Hello");
   }
 };
 

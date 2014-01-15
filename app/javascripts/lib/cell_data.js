@@ -5,7 +5,7 @@ var CellData = function(n) {
 
 _.extend(CellData.prototype, {
   initialize: function() {
-    this.value = 1; //TODO calculates and displays real num
+    this.value = null; //TODO calculates and displays real num
     this.row = this.calculateRow();
   },
 

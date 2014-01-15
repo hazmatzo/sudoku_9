@@ -28,7 +28,7 @@ describe("Game, functional", function(){
 
   describe("when clicking the generate button", function(){
     beforeEach(function() {
-      //Game.generate();
+      var game = Game.generate();
     });
 
     describe("should display a valid filled in board", function(){
@@ -46,30 +46,17 @@ describe("Game, functional", function(){
         });
       });
 
-      it("should display valid rows", function(){
-        _.each(_.range(1, 10), function(num){
-          var regEx = new RegExp(num, "g");
-          var row = '.row:nth-child(' + num + ')';
-          console.log(row);
-          expect($(row).text().match(regEx).length).toEqual(1);
-        });
-      });
-
-      xit("should display valid columns", function(){
-
-      });
-
-      xit("should display valid groups", function(){
-
+      it("should display a valid board", function(){
+        expect(game.valid()).toBe(true);
       });
     });
 
-    xit("should display stats for how long it took to generate", function(){
-
+    it("should display stats for how long it took to generate", function(){
+      expect($el.find('#stats')).toMatch(/\d+/);
     });
 
-    xit("should display stats for how many cycles it took to generate", function(){
-
+    it("should display stats for how many cycles it took to generate", function(){
+      expect($el.find('#cycles')).toMatch(/\d+/);
     });
   });
 });
