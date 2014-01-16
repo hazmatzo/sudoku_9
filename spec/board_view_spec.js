@@ -21,15 +21,4 @@ describe("Sudoku.View.Board, unit", function(){
       expect(rowsPrototype.render).toHaveBeenCalled();
     });
   });
-
-  describe("generateValues", function(){
-    describe("fills the board with valid numbers", function(){
-      it("first row should contain values", function(){
-        var cellsPrototype = Sudoku.Collection.Cells.prototype;
-        spyOn(cellsPrototype, "generateValues");
-        view.generateValues();
-        expect(cellsPrototype.generateValues).toHaveBeenCalled();
-      });
-    });
-  });
 });

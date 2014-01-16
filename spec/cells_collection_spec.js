@@ -24,30 +24,5 @@ describe("Sudoku.Collection.Cells, unit", function(){
       });
     });
   });
-
-  //CIWK should we be testing the model (e.g., cell model values) here?
-  // or should we be testing that we're sending the set message to cell
-
-  describe("generateRowValues", function(){
-    it("generates values for the first row", function(){
-      collection.generateRowValues();
-      var rowOneValues = (collection.row(1)).map(function(cell){
-        return cell.attributes.value;
-      });
-      console.log(rowOneValues);
-      expect(rowOneValues).toNotMatch(null);
-      expect(rowOneValues).toMatch(/\d+/);
-    });
-
-    xdescribe("it generates values for all other rows", function(){
-      describe("is a valid row", function(){
-
-      });
-
-      describe("is not a valid row", function(){
-
-      });
-    });
-  });
 });
 

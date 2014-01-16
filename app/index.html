@@ -11,8 +11,8 @@
   <!-- source -->
   <script type="text/javascript" src="javascripts/sudoku.js"></script>
   <script type="text/javascript" src="javascripts/lib/cell_data.js"></script>
-  <script type="text/javascript" src="javascripts/lib/value_generator.js"></script>
-  <script type="text/javascript" src="javascripts/views/generate_button.js"></script>
+  <script type="text/javascript" src="javascripts/lib/row_values_generator.js"></script>
+  <script type="text/javascript" src="javascripts/views/value_generator.js"></script>
   <script type="text/javascript" src="javascripts/collections/cells_collection.js"></script>
   <script type="text/javascript" src="javascripts/views/cell.js"></script>
   <script type="text/javascript" src="javascripts/views/row.js"></script>
@@ -29,7 +29,7 @@
     <div class="inner bordered"><div class="value">{{value}}</div></div>
   </script>
 
-  <script type="text/mustache" id="generateButton"><div id="generateButton" class="line unit size1of1">
+  <script type="text/mustache" id="generate-button"><div class="line unit size1of1">
     <input type="submit" value="Generate"></div>
   </script>
 
@@ -42,9 +42,11 @@
   <div class="content centered-content">
     <h1>RaeZoer-doku</h1>
     <h3>We eats numbers.</h3>
-    <div class="board">
+    <div class="game">
 
     </div>
+
+
   </div>
 </body>
 </html>
