@@ -1,10 +1,12 @@
 Sudoku.View.Board = Backbone.View.extend({
   events: {
-    "click #generateButton"   : "generateBoard"
+    "click #generateButton"   : "generateValues"
   },
 
-  generateBoard: function(){
-    alert("ROAARRR");
+  generateValues: function(){
+    this.collection.generateRowValues();
+    this.$el.children().remove();
+    this.render();
   },
 
   render: function(){

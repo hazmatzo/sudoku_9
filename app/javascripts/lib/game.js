@@ -1,7 +1,9 @@
+window.boardSize = 9;
+var board;
 var Game = {
   start: function(gameData){
     gameData = gameData || this.data();
-    var board = new Sudoku.View.Board(gameData);
+    board = new Sudoku.View.Board(gameData);
     board.render();
   },
 
@@ -15,9 +17,5 @@ var Game = {
 
     return {collection: collection, el: $('.board')};
   },
-
-  generate: function(){
-    alert("Hello");
-  }
 };
 

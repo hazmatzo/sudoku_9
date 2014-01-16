@@ -28,7 +28,7 @@ describe("Game, functional", function(){
 
   describe("when clicking the generate button", function(){
     beforeEach(function() {
-      var game = Game.generate();
+      board.generateValues(); //CIWK or simulate clicking generate button?
     });
 
     describe("should display a valid filled in board", function(){
