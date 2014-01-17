@@ -1,9 +1,10 @@
-describe("Sudoku.View.ValueGenerator, unit", function(){
+describe("Sudoku.View.GenerateButton, unit", function(){
   var collection, view;
+  // CIWK is there too much responsibility in this view?
 
   beforeEach(function(){
     collection = new Sudoku.Collection.Cells(fakeCellHashes);
-    view = new Sudoku.View.ValueGenerator({collection: collection});
+    view = new Sudoku.View.GenerateButton({collection: collection});
   });
 
   describe("render", function(){
@@ -11,6 +12,6 @@ describe("Sudoku.View.ValueGenerator, unit", function(){
       expect(view.$el.hasClass("button")).toBeTruthy();
     });
   });
+
+
 });
-
-

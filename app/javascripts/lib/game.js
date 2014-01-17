@@ -5,8 +5,8 @@ var Game = {
     gameData = gameData || this.data();
     board = new Sudoku.View.Board(gameData);
     board.render();
-    valueGenerator = new Sudoku.View.ValueGenerator(gameData);
-    valueGenerator.render();
+    generateButton = new Sudoku.View.GenerateButton(gameData);
+    generateButton.render();
   },
   // CIWK - should we be using the game data, doesn't work without it.
 
@@ -18,7 +18,7 @@ var Game = {
 
     var collection = new Sudoku.Collection.Cells(modelHashes);
 
-    return {collection: collection, el: $('.game')};
+    return {collection: collection, parent: $('.game')};
   },
 };
 
