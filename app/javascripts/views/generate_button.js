@@ -8,14 +8,26 @@ Sudoku.View.GenerateButton = Backbone.View.extend({
   },
 
   template: function(){
-    return $('#generate-button').text();
+    return $('#generate-button').text(); //we use inheritance
   },
 
   className: 'button',
 
+// TODO: Add 'generateValidBoard'
+
   render: function(){
-    this.$el.append(Mustache.render(this.template()));
+    this.$el.append(Mustache.render(this.template())); //we use inheritance on the Mustache.render()
     $(this.parent).append(this.$el);
     return this;
   },
 });
+
+// (render('#generate-button'))
+
+// Refactor template:
+
+// template: function(thetemplate){
+//   return $(thetemplate).text();
+// }
+
+// Mustache.render(this.template());
