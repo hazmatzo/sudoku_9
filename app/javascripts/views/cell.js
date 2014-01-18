@@ -1,12 +1,7 @@
-Sudoku.View.Cell = Backbone.View.extend({
-  template: function(){
-    return $('#cell-template').text();
-  },
-
+Sudoku.View.Cell = Sudoku.View.Master.extend({
   className: 'cell unit size1of9',
 
-  render: function(){
-    this.$el.html(Mustache.render(this.template(), this.model.toJSON()));
-    return this;
-  }
+  templateId: function(){
+    return '#cell-template';
+  },
 });

@@ -1,12 +1,12 @@
-Sudoku.View.Row = Backbone.View.extend({
-  template: function(){
-    return $('#row-template').text();
-  },
-
+Sudoku.View.Row = Sudoku.View.Master.extend({
   className: 'row',
 
+  templateId: function(){
+    return '#row-template';
+  },
+
   render: function(){
-    this.$el.html(Mustache.render(this.template()));
+    Sudoku.View.Master.prototype.render.call(this);
     this.collection.each(this.renderCell, this);
     return this;
   },
