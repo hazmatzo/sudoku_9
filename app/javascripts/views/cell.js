@@ -1,7 +1,7 @@
-Sudoku.View.Cell = Backbone.View.extend({
-  template: function(){
-    return $('#cell-template').text();
-  },
+Sudoku.View.Cell = Sudoku.View.Master({
+  // template: function(){
+  //   return $('#cell-template').text();
+  // },
 
   className: 'cell unit size1of9',
 
@@ -10,3 +10,5 @@ Sudoku.View.Cell = Backbone.View.extend({
     return this;
   }
 });
+
+// Mustache.render(this.template())
