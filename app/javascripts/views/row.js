@@ -1,17 +1,15 @@
-Sudoku.View.Row = Sudoku.View.Master.extend({
+Sudoku.View.Row = Sudoku.View.Base.extend({
   className: 'row',
 
-  templateId: function(){
-    return '#row-template';
-  },
+  templateId: '#row-template',
 
   render: function(){
-    Sudoku.View.Master.prototype.render.call(this);
+    Sudoku.View.Base.prototype.render.call(this);
     this.collection.each(this.renderCell, this);
     return this;
   },
 
-  renderCell: function(item){
+  renderCell: function(item){ //how is model getting passed through w/item?
     var cell = new Sudoku.View.Cell({model: item});
     cell.render();
     this.$('.last-unit').append(cell.el);

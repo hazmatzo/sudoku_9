@@ -10,10 +10,12 @@ describe("Game, functional", function(){
 
   describe("when going to a new game page", function(){
     it("should display a board with 9 rows", function(){
+      //TODO Fix this test.
       expect($el.find('.row').length).toEqual(9);
     });
 
     it("should display a board with 81 cells", function(){
+      //TODO Fix this test.
       expect($el.find('.cell').length).toEqual(81);
     });
 

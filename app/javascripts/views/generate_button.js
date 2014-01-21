@@ -1,33 +1,26 @@
-Sudoku.View.GenerateButton = Backbone.View.extend({
+Sudoku.View.GenerateButton = Sudoku.View.Base.extend({
   events: {
     "click #generateButton"   : "generateValidBoard" //generateValidBoard is while loop, relies on isFilledIn
+    //how to rerender when the boardGenerator completes its task (changing the values on all models)
   },
 
-  initialize: function(options){
-    this.parent = options.parent;
+  initialize: function(opts){
+    this.parent = opts.parent;
   },
 
-  template: function(){
-    return $('#generate-button').text(); //we use inheritance
-  },
+  templateId: '#generate-button',
 
   className: 'button',
 
-// TODO: Add 'generateValidBoard'
+  generateValidBoard: function(){
+    var boardGenerator = new BoardGenerator({collection: this.collection});
+    boardGenerator.generate();
+    //rerender
+  },
 
   render: function(){
-    this.$el.append(Mustache.render(this.template())); //we use inheritance on the Mustache.render()
+    Sudoku.View.Base.prototype.render.call(this);
     $(this.parent).append(this.$el);
     return this;
   },
 });
-
-// (render('#generate-button'))
-
-// Refactor template:
-
-// template: function(thetemplate){
-//   return $(thetemplate).text();
-// }
-
-// Mustache.render(this.template());

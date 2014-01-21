@@ -18,7 +18,7 @@ describe("Sudoku.View.Board, unit", function(){
       var rowsPrototype = Sudoku.View.Row.prototype;
       spyOn(rowsPrototype, "render");
       view.render();
-      expect(rowsPrototype.render).toHaveBeenCalled();
+      expect(rowsPrototype.render).toHaveBeenCalled(); //TODO callCount instead??
     });
   });
 });

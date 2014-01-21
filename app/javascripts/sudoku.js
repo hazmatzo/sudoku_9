@@ -1,11 +1,7 @@
 var Sudoku = {
-  View: {
-    // would we put the base class in here?
-    // template: function(thetemplate){
-    //   return $(thetemplate).text();
-    // }
-  },
+  View: {},
   Model: {},
   Collection: {},
   gameData:{}
+  //CIWK should we add CellData and BoardGenerator here?
 };

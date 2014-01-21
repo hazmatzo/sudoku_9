@@ -1,6 +1,5 @@
 describe("Sudoku.View.GenerateButton, unit", function(){
   var collection, view;
-  // CIWK is there too much responsibility in this view?
 
   beforeEach(function(){
     collection = new Sudoku.Collection.Cells(fakeCellHashes);
@@ -13,5 +12,16 @@ describe("Sudoku.View.GenerateButton, unit", function(){
     });
   });
 
+  describe("generateValidBoard", function(){
+    it("sends a message to the Board Generator", function(){
+      var boardGeneratorPrototype = BoardGenerator.prototype;
+      spyOn(boardGeneratorPrototype, "generate");
+      view.generateValidBoard();
+      expect(boardGeneratorPrototype.generate).toHaveBeenCalled();
+    });
 
+    xit("re-renders the board", function(){
+
+    });
+  });
 });

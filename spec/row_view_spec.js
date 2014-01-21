@@ -16,7 +16,8 @@ describe("Sudoku.View.Row, unit", function(){
       var cellPrototype = Sudoku.View.Cell.prototype;
       spyOn(cellPrototype, "render");
       view.render();
-      expect(cellPrototype.render).toHaveBeenCalled(); //CIWK do we spec a number of times here?
+      expect(cellPrototype.render.callCount).toEqual(9);
+      // Refactor test success! Now with more .callCount!
     });
   });
 });

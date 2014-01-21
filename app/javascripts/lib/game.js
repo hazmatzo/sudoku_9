@@ -8,7 +8,6 @@ var Game = {
     generateButton = new Sudoku.View.GenerateButton(gameData);
     generateButton.render();
   },
-  // CIWK - should we be using the game data, doesn't work without it.
 
   data: function(){
     var modelHashes = _.map(_.range(81), function(num){
