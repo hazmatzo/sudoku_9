@@ -9,7 +9,7 @@ Sudoku.View.Row = Sudoku.View.Base.extend({
     return this;
   },
 
-  renderCell: function(item){ //how is model getting passed through w/item?
+  renderCell: function(item){
     var cell = new Sudoku.View.Cell({model: item});
     cell.render();
     this.$('.last-unit').append(cell.el);

@@ -2,7 +2,9 @@ window.boardSize = 9;
 var board;
 var Game = {
   start: function(gameData){
-    gameData = gameData || this.data();
+    gameData = gameData || this.data(); //CIWK is this the dependency injector?
+    // injector (sometimes referred to as a provider or container) that creates
+    // instances of classes that implement a given dependency interface on request.
     board = new Sudoku.View.Board(gameData);
     board.render();
     generateButton = new Sudoku.View.GenerateButton(gameData);
