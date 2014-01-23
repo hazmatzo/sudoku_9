@@ -4,7 +4,7 @@ describe("BoardGenerator, functional", function(){ //TODO make these functional 
   var collection = new Sudoku.Collection.Cells(fakeCellHashes),
       boardGenerator = new BoardGenerator({collection: collection});
 
-  describe("autoGenerateRow", function(){
+  xdescribe("autoFillRow", function(){
     describe("generating the first row", function(){
       it("generates values for the first row", function(){
         boardGenerator.autoFillRow();
@@ -18,7 +18,7 @@ describe("BoardGenerator, functional", function(){ //TODO make these functional 
       });
     });
 
-    describe("generating other rows", function(){
+    xdescribe("generating other rows", function(){
       describe("at the top of each turn", function(){ //turn here is defined as each row the generator fills, row-by-row
         it("generates values for an empty row", function(){
           // console.log(boardGenerator.collection.row(1).at(0).set({value:7}));
@@ -85,7 +85,7 @@ describe("BoardGenerator, functional", function(){ //TODO make these functional 
           });
 
           _.each(rowTwoValues, function(num){
-            expect(num).toNotMatch(/\d+/);
+            expect(num).not.toMatch(/\d+/);
           });
         });
       });
@@ -94,8 +94,12 @@ describe("BoardGenerator, functional", function(){ //TODO make these functional 
     //TODO: do we need a case for last row filled in and messages sent as a result?
   });
 
-  xdescribe("isValid", function(){
-    describe("when rows, columns, and groups are all valid", function(){});
+  describe("isValid", function(){
+    describe("when rows, columns, and groups are all valid", function(){
+      var board = validBoard();
+      console.log(validBoard());
+    });
+
     describe("when one cell is invalid", function(){});
     describe("when two cells are nil, but board is valid", function(){});
     describe("when a cell has an illegal value", function(){});

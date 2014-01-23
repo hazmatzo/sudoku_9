@@ -1,4 +1,5 @@
 Sudoku.View.Base = Backbone.View.extend({
+  //as soon as the code loads into the page, it is evaluated
   template: function(){
     return $(this.templateId).text();
   },

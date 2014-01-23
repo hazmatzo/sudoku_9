@@ -3,9 +3,15 @@ var CollectionManager = function(unit) {
 };
 
 _.extend(CollectionManager.prototype, {
-  clearRow: function(num) {
-
-
+  clearValues: function(unit) {
+    // this takes a collection
   },
 
+  fillValues: function(){
+    // this.unit.each.set({value: value})
+  },
+
+  isValid: function() {
+    //returns a boolean
+  }
 });

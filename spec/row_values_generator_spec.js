@@ -15,7 +15,7 @@ describe("RowValuesGenerator, unit", function(){
       firstValue = rowValuesGenerator.popValue();
       secondValue = rowValuesGenerator.popValue();
 
-      expect(firstValue).toNotMatch(secondValue);
+      expect(firstValue).not.toMatch(secondValue);
     });
 
     it("deletes one value from the randomized values", function(){
