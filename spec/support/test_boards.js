@@ -30,7 +30,7 @@ var oneInvalidBoard = function(){
   ];
 };
 
-  var almostFilledValidBoard = function(){
+var almostFilledValidBoard = function(){
   return [
     4,3,5, 2,6,9, 7,8,1,
     6,8,2, 5,7,1, 4,9,3,
@@ -46,7 +46,7 @@ var oneInvalidBoard = function(){
   ];
 };
 
-  var illegalValueBoard = function(){
+var illegalValueBoard = function(){
   return [
     4,3,5, 2,6,9, 7,8,1,
     6,8,2, 5,7,1, 4,9,3,
@@ -61,8 +61,3 @@ var oneInvalidBoard = function(){
     7,6,3, 4,1,8, 2,5,9
   ];
 };
-
-    describe("when one cell is invalid", function(){});
-    describe("when two cells are nil, but board is valid", function(){});
-    describe("when a cell has an illegal value", function(){});
-    describe("when boards cell values are all nil", function(){});

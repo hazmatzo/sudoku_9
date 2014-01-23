@@ -96,8 +96,15 @@ describe("BoardGenerator, functional", function(){ //TODO make these functional 
 
   describe("isValid", function(){
     describe("when rows, columns, and groups are all valid", function(){
-      var board = validBoard();
-      console.log(validBoard());
+      it("isValid", function() {
+        var board = validBoard();
+        console.log(validBoard());
+        boardGenerator.collection.each(function(cell){
+          cell.set({value: board.pop()});
+        });
+        console.log(boardGenerator.collection.at(80).get("value"));
+        expect(boardGenerator.isValid()).toBe(true);
+      });
     });
 
     describe("when one cell is invalid", function(){});
