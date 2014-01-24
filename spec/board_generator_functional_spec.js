@@ -1,8 +1,13 @@
-describe("BoardGenerator, functional", function(){ //TODO make these functional and unit tests
+describe("BoardGenerator, functional", function(){
+  var collection, boardGenerator;
+
+  //TODO make these functional and unit tests
   //make sure testing for when and when not to fillEmptyRow
   //make sure testing for when and when not valid
-  var collection = new Sudoku.Collection.Cells(fakeCellHashes),
-      boardGenerator = new BoardGenerator({collection: collection});
+  beforeEach(function(){
+    collection = new Sudoku.Collection.Cells(fakeCellHashes);
+    boardGenerator = new BoardGenerator({collection: collection});
+  });
 
   xdescribe("autoFillRow", function(){
     describe("generating the first row", function(){
@@ -43,12 +48,8 @@ describe("BoardGenerator, functional", function(){ //TODO make these functional 
 
           var validRowValues = function(){
             var values = [];
-            console.log("here are the rowOneValues: ");
-            console.log(rowOneValues);
             values.push(rowOneValues.pop());
             values = values.concat(rowOneValues);
-            console.log("here are the new values:");
-            console.log(values);
             return values;
           };
 
@@ -98,11 +99,9 @@ describe("BoardGenerator, functional", function(){ //TODO make these functional 
     describe("when rows, columns, and groups are all valid", function(){
       it("isValid", function() {
         var board = validBoard();
-        console.log(validBoard());
         boardGenerator.collection.each(function(cell){
           cell.set({value: board.pop()});
         });
-        console.log(boardGenerator.collection.at(80).get("value"));
         expect(boardGenerator.isValid()).toBe(true);
       });
     });

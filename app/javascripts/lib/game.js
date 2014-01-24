@@ -1,4 +1,3 @@
-window.boardSize = 9;
 var board;
 var Game = {
   start: function(gameData){
@@ -21,5 +20,7 @@ var Game = {
 
     return {collection: collection, parent: $('.game')};
   },
+
+  boardSize: 9
 };
 

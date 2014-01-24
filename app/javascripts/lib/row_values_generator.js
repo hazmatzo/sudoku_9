@@ -17,8 +17,8 @@ _.extend(RowValuesGenerator.prototype, {
     return _.shuffle(this.validRowValues());
   },
 
-  popValue: function(){
-    return this.randomizedValues.pop();
+  at: function(i) {
+    return this.randomizedValues[i];
   }
 });
 

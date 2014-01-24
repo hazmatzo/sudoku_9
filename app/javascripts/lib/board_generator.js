@@ -3,10 +3,19 @@ var BoardGenerator = function(opts) {
 };
 
 _.extend(BoardGenerator.prototype, {
+
+  collectionCall: function(unit){
+    return new CollectionManager(unit);
+  },
+
   isValid: function(){
-    var collectionManager = new CollectionManager(this.collection);
-    return collectionManager.isValid();
-    // See note below.
+    var collectionRange = (Game.boardSize + 1);
+    return _.every(_.range(collectionRange), function(num){
+      var rowCall = this.collectionCall(this.collection.row(num));
+      var columnCall = this.collectionCall(this.collection.column(num));
+      var groupCall = this.collectionCall(this.collection.group(num));
+      return rowCall.isValid() && columnCall.isValid() && groupCall.isValid();
+    }, this);
   },
 
   isFilledIn: function(){
@@ -23,8 +32,8 @@ _.extend(BoardGenerator.prototype, {
 
   handleInvalidBoard: function(){
     if(this.isValid()){return;}
-    var collectionManager = new CollectionManager(this.collection);
-    collectionManager.clearValues(this.lastFilledRow());
+    var collectionManager = this.collectionCall(this.lastFilledRow());
+    collectionManager.clearValues();
   },
 
   firstEmptyRow: function(){
@@ -34,8 +43,8 @@ _.extend(BoardGenerator.prototype, {
   },
 
   fillEmptyRow: function(){
-    var collectionManager = new CollectionManager(this.collection);
-    collectionManager.fillValues(this.firstEmptyRow());
+    var collectionManager = this.collectionCall(this.firstEmptyRow());
+    collectionManager.fillValues();
   },
 
   autoFillRow: function(){
@@ -52,11 +61,3 @@ _.extend(BoardGenerator.prototype, {
   }
 });
 
-// Note:
-    // def valid?
-    //   (1..SIZE).all? do |num|
-    //     [:row, :column, :group].all? do |collection_type|
-    //       collection_call(get_collection(collection_type, num)).valid?
-    //     end
-    //   end
-    // end

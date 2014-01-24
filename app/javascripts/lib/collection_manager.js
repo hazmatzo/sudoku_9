@@ -1,17 +1,28 @@
-var CollectionManager = function(unit) {
-  this.unit = unit;
+var CollectionManager = function(collection) {
+  this.collection = collection;
 };
 
 _.extend(CollectionManager.prototype, {
-  clearValues: function(unit) {
-    // this takes a collection
+  clearValues: function() {
+    this.collection.each(function(cell){
+      cell.set({value: null});
+    });
   },
 
   fillValues: function(){
-    // this.unit.each.set({value: value})
+    var rowValuesGenerator = new RowValuesGenerator(); //TODO change name to valuesGenerator
+    this.collection.each(function(cell, i){
+      var poppedValue = rowValuesGenerator.at(i);
+      console.log(poppedValue);
+      cell.set({value: poppedValue});
+    });
   },
 
   isValid: function() {
-    //returns a boolean
+    var valuesCollection = this.collection.map(function(cell){
+      return cell.get("value");
+    });
+    var compactCollection = _.compact(valuesCollection);
+    return (compactCollection.length === (_.uniq(compactCollection)).length);
   }
 });

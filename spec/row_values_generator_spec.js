@@ -5,24 +5,16 @@ describe("RowValuesGenerator, unit", function(){
     rowValuesGenerator = new RowValuesGenerator();
   });
 
-  describe("popValue", function(){
+  describe("at", function(){
     it("provides a number", function(){
-      firstValue = rowValuesGenerator.popValue();
+      firstValue = rowValuesGenerator.at(0);
       expect(firstValue).toMatch(/\d+/);
     });
 
     it("provides a unique (for the row) randomized value", function(){
-      firstValue = rowValuesGenerator.popValue();
-      secondValue = rowValuesGenerator.popValue();
-
+      firstValue = rowValuesGenerator.at(0);
+      secondValue = rowValuesGenerator.at(1);
       expect(firstValue).not.toMatch(secondValue);
-    });
-
-    it("deletes one value from the randomized values", function(){
-      var beforeLength = rowValuesGenerator.randomizedValues.length;
-      rowValuesGenerator.popValue();
-      var afterLength = rowValuesGenerator.randomizedValues.length;
-      expect(beforeLength).toEqual(afterLength+1);
     });
   });
 });
