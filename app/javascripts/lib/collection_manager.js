@@ -13,7 +13,6 @@ _.extend(CollectionManager.prototype, {
     var rowValuesGenerator = new RowValuesGenerator(); //TODO change name to valuesGenerator
     this.collection.each(function(cell, i){
       var poppedValue = rowValuesGenerator.at(i);
-      console.log(poppedValue);
       cell.set({value: poppedValue});
     });
   },
@@ -25,4 +24,4 @@ _.extend(CollectionManager.prototype, {
     var compactCollection = _.compact(valuesCollection);
     return (compactCollection.length === (_.uniq(compactCollection)).length);
   }
-});
+});0

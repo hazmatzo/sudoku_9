@@ -10,6 +10,15 @@ var Game = {
     generateButton.render();
   },
 
+//CIWK
+  // rerender: function(){
+  //   var gameEl = this.data().parent;
+  //   console.log(gameEl);
+  //   gameEl.empty();
+  //   board.render();
+  //   generateButton.render();
+  // },
+
   data: function(){
     var modelHashes = _.map(_.range(81), function(num){
       var cellData = new CellData(num);
@@ -21,6 +30,7 @@ var Game = {
     return {collection: collection, parent: $('.game')};
   },
 
-  boardSize: 9
+  boardSize: 9,
+  turnCount: 0,
 };
 

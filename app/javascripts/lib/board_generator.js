@@ -19,9 +19,17 @@ _.extend(BoardGenerator.prototype, {
   },
 
   isFilledIn: function(){
-    return this.collection.every(function(cell){
-      return (cell.get("value") !== null);
+    var halfBoard = _.map(_.range(0,18), function(i){
+      return this.collection.at(i);
+    }, this);
+
+    return _.every(halfBoard, function(cell){
+      return cell.get("value") !== null;
     });
+
+    // return this.collection.every(function(cell){
+    //   return (cell.get("value") !== null);
+    // });
   },
 
   lastFilledRow: function(){
@@ -52,12 +60,22 @@ _.extend(BoardGenerator.prototype, {
     this.handleInvalidBoard();
   },
 
+  clearBoard: function(){
+    console.log("woof rows", this.collection.rows());
+    _.each(this.collection.rows(), function(row){
+      var collectionManager = this.collectionCall(row);
+      collectionManager.clearValues();
+    }, this);
+  },
+
   generate: function(){
+    this.clearBoard();
     while (!(this.isFilledIn())) {
+      console.log("<=turn count");
       this.autoFillRow();
+      Game.turnCount++;
       // add to turn count
     }
-    // do we call the render function here?
   }
 });
 

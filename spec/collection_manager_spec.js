@@ -23,7 +23,6 @@ describe("CollectionManager, unit", function(){
       var collectionValues = collection.map(function(cell){
         return cell.get("value");
       });
-      console.log(collectionValues);
       expect((_.uniq(collectionValues).length)).toEqual(9);
     });
   });

@@ -1,6 +1,6 @@
 Sudoku.View.GenerateButton = Sudoku.View.Base.extend({
   events: {
-    "click #generateButton"   : "generateValidBoard" //generateValidBoard is while loop, relies on isFilledIn
+    "click #generate-button"   : "generateValidBoard" //generateValidBoard is while loop, relies on isFilledIn
     //how to rerender when the boardGenerator completes its task (changing the values on all models)
   },
 
@@ -15,7 +15,11 @@ Sudoku.View.GenerateButton = Sudoku.View.Base.extend({
   generateValidBoard: function(){
     var boardGenerator = new BoardGenerator({collection: this.collection});
     boardGenerator.generate();
-    //rerender
+    console.log(this.collection.map(function(cell){
+      return cell.get("value");
+    }));
+    //rerender board
+    board.render();
   },
 
   render: function(){

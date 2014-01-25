@@ -1,0 +1,39 @@
+Ideas for faster board generation:
+  + Create the initial seed for the first group row (see #1, filled in group row) from the random generator, then create the following two groups rows from that seed
+   - the following rows would be create by popping the number off the end of the last row and then concatenating the remainder of the last row
+  + Mirroring pairs, where cattycorner cells have reversed number neighbors e.g (2 | 1) & (1 | 2)
+
+1 First 3 lines generated row-by-row
+  turns: 377
+  time: ~5s
+  [2, 7, 8,  4, 9, 5,  1, 3, 6,
+   9, 3, 5,  1, 7, 6,  4, 2, 8,
+   6, 4, 1,  8, 2, 3,  7, 5, 9,
+   null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+
+2 Second 3 lines generated row-by-row
+  turns: 2500+
+  time:
+
+3 First 2 lines generated row-by-row
+  turns: 57
+  time: ~3s
+  [6, 4, 2,  7, 5, 8,  1, 9, 3,
+   1, 8, 9,  3, 2, 4,  5, 7, 6, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+
+4 First 1/2 board generated row-by-row
+  turns: 2000
+  time: ~2m
+  NOT OKAY!!!
+
+  [8, 5, 4,  9, 3, 7,  1, 6, 2,
+   1, 3, 6,  5, 4, 2,  9, 8, 7,
+   7, 9, 2,  6, 1, 8,  3, 4, 5,
+   4, 2, 7,  3, 9, 1,  6, 5, 8,
+   9, 6, 1,  8, 7, 5,  2, 3, 4,
+   null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+
+5 Second 1/2 board generated row-by-row
+  turns:
+  time:
+  NOT YET
